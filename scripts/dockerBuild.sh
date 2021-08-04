@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-DOCKER_REPO=`aws ecr describe-repositories --repository-names <created_repo_name> | grep repositoryUri | cut -d "\"" -f 4`
-Docker build --no-cache -t ${DOCKER_REPO}:<docker_tag> .
-Docker push ${DOCKER_REPO}:<docker_tag>
+echo build docker image
+DOCKER_REPO=`aws ecr describe-repositories --repository-names "jenkins-test-repo" | grep repositoryUri | cut -d "\"" -f 4`
+docker build — no-cache -t ${DOCKER_REPO}:1.0 .
+docker push ${DOCKER_REPO}:1.0
