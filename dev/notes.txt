@@ -1,0 +1,5 @@
+xcopy "C:\Windows\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\aws github hook" "D:\jenskinsawsgithub" /s /e /y /i
+D:
+cd jenskinsawsgithub
+mvn package
+cd target
